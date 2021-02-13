@@ -6,6 +6,9 @@ const logger = require('morgan')
 
 const indexRouter = require('./routes/index')
 
+// mongodb
+const db = require('./helpers/db')()
+
 const app = express()
 
 app.use(logger('dev'))

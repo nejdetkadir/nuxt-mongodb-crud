@@ -2,19 +2,30 @@
 MongoDB CRUD operations with NuxtJS
 
 ## Build Setup
-
+install dependencies
 ```bash
-# install dependencies
 $ npm install
+```
 
-# serve with hot reload at localhost:3000
+### Environment variables
+Create a file named ".env" in the root directory and fill its contents as follows
+```dotenv
+MONGODB_URI=XXX
+```
+
+serve with hot reload at localhost:3000
+```bash
 $ npm run dev
+```
 
-# build for production and launch server
+build for production and launch server
+```bash
 $ npm run build
 $ npm run start
+```
 
-# generate static project
+generate static project
+```bash
 $ npm run generate
 ```
 
