@@ -13,8 +13,13 @@
 <script>
 export default {
   methods: {
-    deleteArticle() {
-      console.log('clicked the delete button');
+    async deleteArticle() {
+      let res = await this.$axios.delete('/api/articles/delete', {data: {id: this.article._id}}, {})
+      if (res.data !== null && res.status == 200) {
+        this.isDetails ? this.$router.push('/') : this.$nuxt.refresh()
+      } else {
+        this.$router.push('/?status=deleteerror')
+      }      
     }
   },
   props: {
