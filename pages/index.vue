@@ -1,10 +1,17 @@
 <template lang="pug">
   .container.mt-5.mb-5
     .row
-      .col-sm-6.col-md-4.col-lg-3.p-3(v-for="i in 8" :key="i")
-        Article
+      .col-sm-6.col-md-4.col-lg-3.p-3(v-for="(article, index) in articles" :key="index")
+        Article(:article="article")
 </template>
 
 <script>
-export default {}
+export default {
+  asyncData({$axios}) {
+    return $axios.get(`/api/articles`)
+    .then(res => {
+      return { articles: res.data }
+    })
+  }
+}
 </script>

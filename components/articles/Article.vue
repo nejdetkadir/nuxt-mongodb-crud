@@ -1,12 +1,11 @@
 <template lang="pug">
   .card.text-center.shadow.bg-body.rounded
-    .card-header
-      | Title
+    .card-header {{article.title}}
     .card-body
-      p.card-text Text
+      p.card-text {{ isDetails ? article.text : article.text.substring(0, 50)}}
       .actions
-        nuxt-link(to="/articles/1" class="btn btn-primary btn-sm" v-if="!isDetails") Read
-        nuxt-link(to="/articles/1/edit" class="btn btn-warning btn-sm") Update
+        nuxt-link(:to="'/articles/'+article._id" class="btn btn-primary btn-sm" v-if="!isDetails") Read
+        nuxt-link(:to="'/articles/'+article._id + '/edit'" class="btn btn-warning btn-sm") Update
         button.btn.btn-danger.btn-sm(@click.prevent="deleteArticle") Delete
     .card-footer.text-muted Created at
 </template>
@@ -22,6 +21,10 @@ export default {
     isDetails: {
       type: Boolean,
       default: false,
+    },
+    article: {
+      type: Object,
+      required: true
     }
   }
 }
