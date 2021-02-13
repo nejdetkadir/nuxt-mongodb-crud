@@ -1,6 +1,8 @@
 # nuxt-mongodb-crud
 MongoDB CRUD operations with NuxtJS
 
+![cover](doc/cover.gif)
+
 ## Build Setup
 install dependencies
 ```bash
