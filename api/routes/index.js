@@ -37,8 +37,8 @@ router.post('/articles/new', (req, res) => {
 
 /* PUT update article with by id */
 router.put('/articles/update', (req, res) => {
-  const {id, title, text} = req.body
-  Article.findByIdAndUpdate(id, {title, text}, {new: true})
+  const {_id, title, text} = req.body
+  Article.findByIdAndUpdate(_id, {title, text}, {new: true})
   .then(data => {
     res.status(200).json(data)
   }).catch(err => {
