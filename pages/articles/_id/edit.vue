@@ -4,3 +4,20 @@
       .col-md-6.mx-auto
         ArticleForm(:is-update="true")
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'Edit Article',
+      meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'You can edit an article from this page'
+      }
+    ],
+    }
+  }
+}
+</script>

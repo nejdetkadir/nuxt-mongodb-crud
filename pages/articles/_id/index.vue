@@ -18,6 +18,18 @@ export default {
     }).catch(() => {
       redirect('/?status=notfound')
     })
+  },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: this.article.text
+      }
+    ],
+    }
   }
 }
 </script>

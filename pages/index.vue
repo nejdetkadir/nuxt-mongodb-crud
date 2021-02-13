@@ -12,6 +12,18 @@ export default {
     .then(res => {
       return { articles: res.data }
     })
+  },
+  head() {
+    return {
+      title: 'Articles',
+      meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'You can find all articles in this page'
+      }
+    ],
+    }
   }
 }
 </script>
