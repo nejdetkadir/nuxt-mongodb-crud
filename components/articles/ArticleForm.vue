@@ -49,8 +49,10 @@ export default {
         if (res.status == 200) {
           this.form = res.data
         } else {
-          this.$router.push('/?status?notfound')
+          this.$router.push('/?status=notfound')
         }
+      }).catch(() => {
+        this.$router.push('/?status=notfound')
       })
     }
   }
