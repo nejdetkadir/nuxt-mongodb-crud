@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
+    "cookie-parser": "^1.4.5",
     "core-js": "^3.8.3",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
